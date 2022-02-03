@@ -2,6 +2,12 @@
   position: relative;
   display: flex;
   align-items: center;
+  transform: translateX(110%);
+  transition: transform .5s cubic-bezier(0,.71,.55,1.34);
+}
+
+.screen.active .form {
+  transform: none;
 }
 
 .form__label {
