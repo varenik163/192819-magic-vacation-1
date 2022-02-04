@@ -2,9 +2,8 @@
   position: relative;
 
   &:hover {
-    .social-block__list {
+    .social-block__link {
       opacity: 1;
-      pointer-events: auto;
     }
   }
 }
@@ -35,6 +34,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: width .3s, height .3s, border-color 1s;
   }
 
   svg {
@@ -65,6 +65,9 @@
     & + .social-block__list {
       opacity: 1;
       pointer-events: auto;
+      .social-block__link {
+        opacity: 1;
+      }
     }
   }
 
@@ -88,6 +91,7 @@
   right: 0;
   margin-top: 1.5rem;
   opacity: 0;
+  transition: opacity .3s;
   pointer-events: none;
 
   @media (min-width: $stop-scaling) {
@@ -158,6 +162,12 @@
       margin: 0 1.25rem;
     }
   }
+  li:nth-child(2) .social-block__link {
+    transition: opacity .4s 100ms;
+  }
+  li:nth-child(3) .social-block__link {
+    transition: opacity .4s 150ms;
+  }
 }
 
 .social-block__link {
@@ -168,6 +178,12 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  opacity: 0;
+  transition: color .3s 50ms;
+
+  .social-block--active & {
+    opacity: 1;
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
