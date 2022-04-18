@@ -8,9 +8,7 @@ export default (node, params) => {
     throw new Error(`node is required for animateLetters`);
   }
 
-  const {textContent} = node;
-  const arrayOfLines = textContent.split(` `);
-
+  const arrayOfLines = node.textContent.split(` `).filter((e) => e);
   node.innerHTML = null;
   node.classList.add(ANIMATED);
 

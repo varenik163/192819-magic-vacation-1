@@ -2,7 +2,7 @@
   overflow: hidden;
 }
 .animated-word {
-  display: block;
+  display: inline-block;
   white-space: nowrap;
 }
 .animated-word .animated-letter {
@@ -10,7 +10,7 @@
   transform: translate3d(0, 2em, 0);
 }
 
-@keyframes introTitleFadeIn {
+@keyframes lettersAppearance {
   to {
     transform: translate3d(0, .2em, 0);
   }
