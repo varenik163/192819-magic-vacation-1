@@ -2,8 +2,45 @@
   position: relative;
   display: flex;
   align-items: center;
-  transform: translateX(110%);
-  transition: transform .5s cubic-bezier(0,.71,.55,1.34);
+  transform: translate3d(110%, 0, 0);
+  transition: transform .75s cubic-bezier(0,.71,.55,1.34);
+}
+
+#result2.screen--show .form {
+  animation: form .6s;
+  animation-fill-mode: forwards;
+}
+
+#result2.screen--show .form--result .form__field {
+  animation: field .5s 500ms;
+  animation-fill-mode: forwards;
+  padding: 0;
+  width: 6rem;
+  margin-left: calc(100% - 31rem - 6rem);
+
+  &::placeholder {
+    opacity: 0;
+    animation: fieldText .5s;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes fieldText {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes field {
+  to {
+    margin-left: 0;
+    padding: 0 5.6rem;
+    width: calc(100% - 31rem);
+  }
+}
+
+@keyframes form {
+  to {
+    transform: none;
+  }
 }
 
 .screen.active .form {
@@ -85,7 +122,6 @@
 }
 
 .form__button {
-  flex-grow: 1;
 
   @media (orientation: portrait) {
     position: relative;

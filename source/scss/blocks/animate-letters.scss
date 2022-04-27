@@ -1,0 +1,17 @@
+.animated-letters {
+  overflow: hidden;
+}
+.animated-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+.animated-word .animated-letter {
+  display: inline-block;
+  transform: translate3d(0, 2em, 0);
+}
+
+@keyframes lettersAppearance {
+  to {
+    transform: translate3d(0, .2em, 0);
+  }
+}
