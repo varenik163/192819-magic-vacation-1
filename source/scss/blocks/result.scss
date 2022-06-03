@@ -1,3 +1,5 @@
+@import "../general/keyframes.scss";
+
 .result {
   flex-grow: 1;
   display: flex;
@@ -240,6 +242,11 @@
   font-size: 2.4rem;
   line-height: 1.2;
   color: $c-light;
+  animation: fadeIn .3s ease-in forwards;
+
+  & span {
+    animation: rollingLeft .3s ease-in forwards;
+  }
 
   @media (min-width: $stop-scaling) {
     margin: auto auto 10px;

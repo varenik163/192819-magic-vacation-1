@@ -181,6 +181,7 @@
   height: 4rem;
   color: $c-dark;
 
+
   @media (min-width: $stop-scaling) {
     width: 40px;
     height: 40px;
@@ -239,10 +240,49 @@
       border-color: $c-purple;
     }
   }
+  .theme-2 &:hover,
+  .theme-2 &:focus {
+    @include theme-colors(theme-2);
+    &::after {
+      @include theme-backgrounds(theme-2);
+    }
+    &::before {
+      @include theme-border-colors(theme-2);
+    }
+  }
+
+  .theme-4 &:hover,
+  .theme-4 &:focus {
+    @include theme-colors(theme-4);
+    &::after {
+      @include theme-backgrounds(theme-4);
+    }
+    &::before {
+      @include theme-border-colors(theme-4);
+    }
+  }
+
+  .theme-6 &:hover,
+  .theme-6 &:focus {
+    @include theme-colors(theme-6);
+    &::after {
+      @include theme-backgrounds(theme-6);
+    }
+    &::before {
+      @include theme-border-colors(theme-6);
+    }
+  }
 
   &.swiper-button-disabled {
     opacity: 0.5;
     pointer-events: none;
+  }
+
+  &.slider__control--prev {
+    animation: sliderControlPrevFadeIn .35s ease-in forwards;
+  }
+  &.slider__control--next {
+    animation: sliderControlNextFadeIn .35s ease-in forwards;
   }
 }
 
@@ -258,6 +298,7 @@
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 4rem;
+  animation: swiperFadeIn .35s ease-in forwards;
 
   @media (min-width: $stop-scaling) {
     bottom: 28px;
@@ -299,5 +340,43 @@
       height: 0.4rem;
       background-color: $c-light;
     }
+  }
+}
+
+@keyframes swiperFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes sliderControlPrevFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50px, 0, 0) rotate(-180deg);
+  }
+  50% {
+    opacity: .5;
+    transform: translate3d(-25px, 0, 0) rotate(-90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+}
+
+@keyframes sliderControlNextFadeIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(50px, 0, 0) rotate(180deg);
+  }
+  50% {
+    opacity: .5;
+    transform: translate3d(25px, 0, 0) rotate(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0);
   }
 }

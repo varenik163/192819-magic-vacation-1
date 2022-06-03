@@ -17,6 +17,16 @@
   color: $c-dark;
   border-radius: 50%;
 
+  .theme-2 & {
+    @include theme-colors(theme-2);
+  }
+  .theme-4 & {
+    @include theme-colors(theme-4);
+  }
+  .theme-6 & {
+    @include theme-colors(theme-6);
+  }
+
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
   }
@@ -53,6 +63,18 @@
       height: 112.5%;
     }
   }
+  .theme-2 &:hover,
+  .theme-2 .social-block--active &{
+    @include theme-colors(theme-2);
+  }
+  .theme-4 &:hover,
+  .theme-4 .social-block--active &{
+    @include theme-colors(theme-4);
+  }
+  .theme-6 &:hover,
+  .theme-6 .social-block--active &{
+    @include theme-colors(theme-6);
+  }
 
   &:focus {
     color: $c-purple;
@@ -71,6 +93,25 @@
     }
   }
 
+  .theme-2 &:focus {
+    @include theme-colors(theme-2);
+    &::before {
+      @include theme-border-colors(theme-2);
+    }
+  }
+  .theme-4 &:focus {
+    @include theme-colors(theme-4);
+    &::before {
+      @include theme-border-colors(theme-4);
+    }
+  }
+  .theme-6 &:focus {
+    @include theme-colors(theme-6);
+    &::before {
+      @include theme-border-colors(theme-6);
+    }
+  }
+
   &:active,
   &:active:focus {
     color: $c-light;
@@ -80,6 +121,33 @@
       height: 100%;
       background-color: $c-purple;
       border-color: $c-purple;
+    }
+  }
+  .theme-2 &:active,
+  .theme-2 &:active:focus {
+    @include theme-colors(theme-2);
+
+    &::before {
+      @include theme-backgrounds(theme-2);
+      @include theme-border-colors(theme-2);
+    }
+  }
+  .theme-4 &:active,
+  .theme-4 &:active:focus {
+    @include theme-colors(theme-4);
+
+    &::before {
+      @include theme-backgrounds(theme-4);
+      @include theme-border-colors(theme-4);
+    }
+  }
+  .theme-6 &:active,
+  .theme-6 &:active:focus {
+    @include theme-colors(theme-6);
+
+    &::before {
+      @include theme-backgrounds(theme-6);
+      @include theme-border-colors(theme-6);
     }
   }
 }
@@ -203,6 +271,15 @@
   &:hover {
     color: $c-purple;
   }
+  .theme-2 &:hover {
+    @include theme-colors(theme-2);
+  }
+  .theme-4 &:hover {
+    @include theme-colors(theme-4);
+  }
+  .theme-6 &:hover {
+    @include theme-colors(theme-6);
+  }
 
   &:focus {
     color: $c-purple;
@@ -210,12 +287,36 @@
     border-color: $c-purple;
     outline: none;
   }
+  .theme-2 &:focus {
+    @include theme-colors(theme-2);
+    @include theme-border-colors(theme-2);
+  }
+  .theme-4 &:focus {
+    @include theme-colors(theme-4);
+    @include theme-border-colors(theme-2);
+  }
+  .theme-6 &:focus {
+    @include theme-colors(theme-6);
+    @include theme-border-colors(theme-2);
+  }
 
   &:active,
   &:active:focus {
     color: $c-purple;
     background-color: $c-light;
     border-color: $c-light;
+  }
+  .theme-2 &:active,
+  .theme-2 &:active:focus {
+    @include theme-colors(theme-2);
+  }
+  .theme-4 &:active,
+  .theme-4 &:active:focus {
+    @include theme-colors(theme-4);
+  }
+  .theme-6 &:active,
+  .theme-6 &:active:focus{
+    @include theme-colors(theme-6);
   }
 
   svg {

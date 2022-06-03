@@ -306,6 +306,30 @@
         left: 0;
       }
     }
+
+    .theme-2 &:hover,
+    .theme-2 &:focus {
+      @include theme-colors(theme-2);
+      &::after {
+        @include theme-backgrounds(theme-2);
+      }
+    }
+
+    .theme-4 &:hover,
+    .theme-4 &:focus {
+      @include theme-colors(theme-4);
+      &::after {
+        @include theme-backgrounds(theme-4);
+      }
+    }
+
+    .theme-6 &:hover,
+    .theme-6 &:focus {
+      @include theme-colors(theme-6);
+      &::after {
+        @include theme-backgrounds(theme-6);
+      }
+    }
   }
 }
 
