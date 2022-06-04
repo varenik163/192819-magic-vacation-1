@@ -1,6 +1,12 @@
+@import "../general/keyframes.scss";
+
 .disclaimer {
   color: $c-dark;
   background-color: $c-light;
+
+  ul {
+    animation: fadeIn .3s ease-in;
+  }
 
   @media (max-width: $tablet) and (orientation: portrait) {
     font-weight: 400;
