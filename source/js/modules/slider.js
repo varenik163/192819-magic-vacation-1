@@ -1,9 +1,23 @@
 import Swiper from "swiper";
 
+const themePrefix = `theme-`;
+
+const setTheme = (themeID) => {
+  const body = document.getElementsByTagName(`body`);
+  const currentThemeClass = Array.from(body[0].classList).find((e) => e.includes(themePrefix));
+
+  if (currentThemeClass) {
+    body[0].classList.remove(currentThemeClass);
+  }
+
+  body[0].classList.add(`${themePrefix}${themeID}`);
+};
+
 export default () => {
   let storySlider;
   let sliderContainer = document.getElementById(`story`);
   sliderContainer.style.backgroundImage = `url("img/slide1.jpg"), linear-gradient(180deg, rgba(83, 65, 118, 0) 0%, #523E75 16.85%)`;
+  setTheme(0);
 
   const setSlider = function () {
     if (((window.innerWidth / window.innerHeight) < 1) || window.innerWidth < 769) {
@@ -26,6 +40,7 @@ export default () => {
             } else if (storySlider.activeIndex === 6 || storySlider.activeIndex === 7) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg"), linear-gradient(180deg, rgba(45, 39, 63, 0) 0%, #2F2A42 16.85%)`;
             }
+            setTheme(storySlider.activeIndex);
           },
           resize: () => {
             storySlider.update();
@@ -60,6 +75,7 @@ export default () => {
             } else if (storySlider.activeIndex === 6) {
               sliderContainer.style.backgroundImage = `url("img/slide4.jpg")`;
             }
+            setTheme(storySlider.activeIndex);
           },
           resize: () => {
             storySlider.update();

@@ -4,7 +4,7 @@ const basicAnimateParams = {
   delay: 250,
   duration: 750,
   animation: `lettersAppearance`,
-  animationTimingFunction: `cubic-bezier(.49,.56,.37,1.2)`,
+  animationTimingFunction: `cubic-bezier(.14,.91,.56,.98)`,
   animationFillMode: `forwards`
 };
 

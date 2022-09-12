@@ -58,3 +58,48 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin theme-colors ($theme) {
+  @if $theme == theme-0 {
+    color: $c-purple;
+  }
+  @if $theme == theme-2 {
+    color: $c-blue;
+  }
+  @if $theme == theme-4 {
+    color: $c-dirty-blue;
+  }
+  @if $theme == theme-6 {
+    color: $c-purple;
+  }
+}
+
+@mixin theme-backgrounds ($theme) {
+  @if $theme == theme-0 {
+    background-color: $c-purple;
+  }
+  @if $theme == theme-2 {
+    background-color: $c-blue;
+  }
+  @if $theme == theme-4 {
+    background-color: $c-dirty-blue;
+  }
+  @if $theme == theme-6 {
+    background-color: $c-purple;
+  }
+}
+
+@mixin theme-border-colors ($theme) {
+  @if $theme == theme-0 {
+    border-color: $c-purple;
+  }
+  @if $theme == theme-2 {
+    border-color: $c-blue;
+  }
+  @if $theme == theme-4 {
+    border-color: $c-dirty-blue;
+  }
+  @if $theme == theme-6 {
+    border-color: $c-purple;
+  }
+}

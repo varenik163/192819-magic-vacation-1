@@ -1,3 +1,5 @@
+@import "../general/keyframes.scss";
+
 .result {
   flex-grow: 1;
   display: flex;
@@ -110,10 +112,12 @@
 }
 @keyframes flamingoFadeIn {
   0% {
+    opacity: 0;
     transform: translate3d(0, 50rem, 0) rotate(-30deg);
   }
 
   25% {
+    opacity: 1;
     transform: translate3d(0, -10rem, 0) rotate(15deg);
   }
 
@@ -131,10 +135,12 @@
 }
 @keyframes leafFadeIn {
   0% {
+    opacity: 0;
     transform: translate3d(0, 50rem, 0);
   }
 
   25% {
+    opacity: 1;
     transform: rotate(40deg);
   }
 
@@ -153,10 +159,12 @@
 
 @keyframes leafLeftFadeIn {
   0% {
+    opacity: 0;
     transform: translate3d(0, 50rem, 0);
   }
 
   25% {
+    opacity: 1;
     transform: rotate(-40deg);
   }
 
@@ -234,6 +242,11 @@
   font-size: 2.4rem;
   line-height: 1.2;
   color: $c-light;
+  animation: fadeIn .3s ease-in forwards;
+
+  & span {
+    animation: rollingLeft .3s ease-in forwards;
+  }
 
   @media (min-width: $stop-scaling) {
     margin: auto auto 10px;
